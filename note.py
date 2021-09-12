@@ -1,6 +1,8 @@
 from tkinter import*
 from tkinter import filedialog as fd
 
+
+
 def new_window():
     window=Toplevel(root)
     window.title('Настройки')
@@ -9,17 +11,33 @@ def new_window():
     Enty=Entry(window)
     Entx.place(x=0,y=0)
     Enty.place(x=0,y=20)
-    lx=Label(window,text='Width',fg='#eee',bg='#000')
-    ly=Label(window,text='Height',fg='#eee',bg='#000')
-    lx.place(x=120,y=0)
-    ly.place(x=10,y=20)
+    lx=Label(window,text='Width  ',fg='#eee',bg='#000',)
+    ly=Label(window,text='Height ',fg='#eee',bg='#000')
+    lx.place(x=125,y=0)
+    ly.place(x=125,y=20)
+
+    def esc():
+        window.destroy()
+
+
+    esc=Button(window,text='Exit',command=esc)
+    esc.place(x=470, y=0)
+
+
 
 
     def change():
        x=Entx.get()
        y=Enty.get()
        root.geometry(x + 'x' + y)
-    Button(window,text='CHANGE',command=change).pack()
+    change=Button(window,text='CHANGE',command=change)
+    change.place(x=0,y=40)
+
+
+
+
+
+
 
 
 
