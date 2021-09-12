@@ -9,6 +9,11 @@ def new_window():
     Enty=Entry(window)
     Entx.place(x=0,y=0)
     Enty.place(x=0,y=20)
+    lx=Label(window,text='Width',fg='#eee',bg='#000')
+    ly=Label(window,text='Height',fg='#eee',bg='#000')
+    lx.place(x=120,y=0)
+    ly.place(x=10,y=20)
+
 
     def change():
        x=Entx.get()
