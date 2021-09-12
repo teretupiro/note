@@ -1,4 +1,5 @@
 from tkinter import*
+from  tkinter import ttk
 from tkinter import filedialog as fd
 
 
@@ -15,6 +16,38 @@ def new_window():
     ly=Label(window,text='Height ',fg='#eee',bg='#000')
     lx.place(x=125,y=0)
     ly.place(x=125,y=20)
+
+
+    def calibry(event):
+        print('Calibry')
+        t['font']='Calibry'
+
+    def timesnewroman(event):
+        print('TNR')
+        t['font']='TimesNewRoman'
+
+
+    def fonts(event):
+        if comboExample.get=='Calibry':
+            calibry(event)
+        if comboExample.get=='TimesNewRoman':
+            timesnewroman(event)
+
+
+
+
+    comboExample = ttk.Combobox(window,
+                                values=[
+                                    "Calibry",
+                                    "TimesNewRoman",
+                                    "Arial"])
+
+    b_fort=Button(window,text='Select_Font',command = lambda:fonts )
+    b_fort.place(x=200,y=20)
+
+    comboExample.current(0)
+    comboExample.bind("<<ComboboxSelected>>", fonts)
+    comboExample.place(x=200,y=0)
 
     def esc():
         window.destroy()
